@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Carrois+Gothic+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Matemasie&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 1) rgba(0, 0, 0, 1);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.nav {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  box-shadow: 0px 15px 20px 0px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  gap: 50px;
+  padding: 20px 50px;
+  margin: 10px 0px;
+}
+
+.nav .menus a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  font-family: "Carrois Gothic SC", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  gap: 5px;
+}
+
+.nav .menus a span i {
+  font-size: 12px;
+  transform: rotate(0deg);
+  transition: transform 0.25s linear;
+}
+
+.nav .menus a:hover i {
+  transform: rotate(90deg);
+}
+
+.nav .menus a span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("../../assets/images/logo-bw.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* filter: grayscale(100%); */
+  padding-top: 150px;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.main-socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 15px 0px;
+  border: 1px dashed rgba(0, 0, 0, 1);
+  border-radius: 2px;
+  box-shadow: -5px -5px 0px 0px rgba(255, 255, 255, 1);
+  transition: box-shadow 0.4s ease-in-out,
+    background-color 0.4s 0.4s ease-in-out;
+}
+
+.main-socials:hover {
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: -8px -8px 0px 0px rgba(255, 255, 255, 1);
+}
+
+.main-socials:hover .socials a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.main-socials .socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-socials .socials a:hover {
+  text-shadow: 2.5px 2.5px 2.5px rgba(255, 255, 255, 1);
+}
+
+.main-socials .socials a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.4s;
+}
+
+.main-email span {
+  transform: rotate(90deg);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px dashed rgba(0, 0, 0, 1);
+  border-radius: 2px;
+  box-shadow: 5px -5px 0px 0px rgba(255, 255, 255, 1);
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.4s ease-in-out,
+    background-color 0.4s 0.4s ease-in-out;
+}
+
+.main-email span:hover {
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 8px -8px 0px 0px rgba(255, 255, 255, 1);
+}
+
+.main-email span:hover a {
+  text-shadow: 2.5px 2.5px 2.5px rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.main-email a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+
+.main-section {
+  width: calc(100% - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  height: inherit;
+  padding: 50px 20px;
+  border-radius: 50px;
+}
+
+.main-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  font-family: "Matemasie", sans-serif;
+  font-weight: 400;
+  font-size: 200px;
+  font-style: normal;
+  text-shadow: 5px 5px 2.5px rgba(255, 255, 255, 0.5);
+  line-height: 200px;
+  filter: brightness(200%);
+}
+
+.main-name {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+  font-size: 36px;
+  line-height: 40px;
+  font-family: "Carrois Gothic SC", sans-serif;
+  padding-top: 40px;
+}
+
+.main-links button {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  border: rgba(0, 0, 0, 1) 1px dashed;
+  border-radius: 2px;
+  box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 1);
+  padding: 15px 25px;
+  width: max-content;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s, border-color 0.4s, box-shadow 0.4s, background 0.4s;
+  text-transform: uppercase;
+}
+
+.main-links button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  transition: left 0.4s;
+  z-index: 0;
+}
+
+.main-links button:hover::before {
+  left: 0;
+}
+
+.main-links button:hover {
+  color: rgba(255, 255, 255, 1);
+  border: rgba(255, 255, 255, 1) 1px dashed;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.main-links button span {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-me,
+.skills,
+.projects,
+.hire {
+  width: 100%;
+  background: rgba(0, 0, 0, 1);
+}
+
+.about-me-container,
+.skills-container,
+.projects-container,
+.hire-container {
+  width: calc(100% - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 200px 100px 0px 100px;
+}
+
+.about-me-header,
+.skills-header,
+.projects-header,
+.hire-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.about-me-title,
+.skills-title,
+.projects-title,
+.hire-title {
+  font-family: "Carrois Gothic SC", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  font-style: normal;
+  text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.5);
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.about-me-subtitle,
+.skills-subtitle,
+.projects-subtitle,
+.hire-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.about-me-description {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.about-me-description img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: grayscale(100%) brightness(150%);
+  border: 1px dashed rgba(255, 255, 255, 1);
+  box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 1);
+  transition: filter 0.2s, box-shadow 0.4s;
+  border-radius: 2px;
+}
+
+.about-me-description img:hover {
+  filter: grayscale(0%) brightness(100%);
+  box-shadow: 8px 8px 0px 0px rgba(255, 255, 255, 1);
+}
+
+.about-me-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.about-me-profile-details {
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+  text-wrap: wrap;
+}
+
+.about-me-profile-details a {
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.4s;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 24px;
+  text-decoration: none;
+  padding: 5px 0px;
+  position: relative;
+  transition: all 0.1s ease-in-out;
+}
+
+.about-me-profile-details a::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.1s ease-in-out;
+}
+
+.about-me-profile-details a:hover::before {
+  width: 100%;
+}
+
+.goto-top {
+  position: fixed;
+  bottom: 20px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 36px;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  transition: background 0.4s, color 0.4s;
+}
+
+.goto-top:hover {
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
