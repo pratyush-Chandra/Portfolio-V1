@@ -51,7 +51,7 @@
       <div class="main-container">
         <div class="main-email">
           <span>
-            <a href="">21cs2030@rgipt.ac.in</a>
+            <a href="mailto:21cs2030@rgipt.ac.in">21cs2030@rgipt.ac.in</a>
           </span>
         </div>
         <div class="main-section">
@@ -66,16 +66,24 @@
         </div>
         <div class="main-socials">
           <div class="socials">
-            <a href=""><i class="bx bxl-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/pratyush-chandra-7741b1231"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
           </div>
           <div class="socials">
-            <a href=""><i class="bx bxl-github"></i></a>
+            <a href="https://github.com/pratyush-Chandra"
+              ><i class="bx bxl-github"></i
+            ></a>
           </div>
           <div class="socials">
-            <a href=""><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.instagram.com/_.pratyush8._"
+              ><i class="bx bxl-instagram"></i
+            ></a>
           </div>
           <div class="socials">
-            <a href=""><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/_.pratyush8._"
+              ><i class="bx bxl-twitter"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -291,10 +299,16 @@
               </div>
             </div>
             <div class="project-card-links not-visible">
-              <a href=""
+              <a href="" onclick="openDemo()"
                 ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
               ></a>
-              <a href=""
+              <script>
+                function openDemo() {
+                  alert("Demo coming soon...");
+                }
+              </script>
+              <a
+                href="https://github.com/pratyush-Chandra/AI-Powered-Inventory-Optimization-Services"
                 ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
               ></a>
             </div>
@@ -314,10 +328,16 @@
               </div>
             </div>
             <div class="project-card-links not-visible">
-              <a href=""
+              <a href="" onclick="openDemo()"
                 ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
               ></a>
-              <a href=""
+              <script>
+                function openDemo() {
+                  alert("Demo coming soon...");
+                }
+              </script>
+              <a
+                href="https://github.com/pratyush-Chandra/AI-Powered-Combinatorial-Polymer-Design"
                 ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
               ></a>
             </div>
@@ -336,10 +356,15 @@
               </div>
             </div>
             <div class="project-card-links not-visible">
-              <a href=""
+              <a href="" onclick="openDemo()"
                 ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
               ></a>
-              <a href=""
+              <script>
+                function openDemo() {
+                  alert("Demo coming soon...");
+                }
+              </script>
+              <a href="https://github.com/pratyush-Chandra/Dev-with-AI"
                 ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
               ></a>
             </div>
@@ -357,10 +382,17 @@
               </div>
             </div>
             <div class="project-card-links not-visible">
-              <a href=""
+              <a
+                href="https://pratyush-chandra.vercel.app/"
+                onclick="openDemo()"
                 ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
               ></a>
-              <a href=""
+              <script>
+                function openDemo() {
+                  alert("Demo coming soon...");
+                }
+              </script>
+              <a href="https://github.com/pratyush-Chandra/Portfolio-V1"
                 ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
               ></a>
             </div>
@@ -385,12 +417,35 @@
           <div class="hire-form">
             <div class="hire-form-address">
               <span>Let's get in touch</span>
-              <span
+              <span onclick="openAddress()"
                 ><i class="bx bx-current-location"></i>Bangalore, India -
                 562114</span
               >
-              <span><i class="bx bx-phone"></i>+91 8709957746</span>
-              <span><i class="bx bx-envelope"></i>21cs2030@rgipt.ac.in</span>
+              <script>
+                function openAddress() {
+                  window.location.href =
+                    "https://maps.app.goo.gl/eCjSami3viHuwF8H9";
+                }
+              </script>
+              <span onclick="copyPhoneNumber()"
+                ><i class="bx bx-phone"></i>+91 8709957746</span
+              >
+              <script>
+                function copyPhoneNumber() {
+                  const phoneNumber = "+91 8709957746";
+                  navigator.clipboard
+                    .writeText(phoneNumber)
+                    .then(() => alert(`Phone number copied: ${phoneNumber}`));
+                }
+              </script>
+              <span onclick="openEmail()"
+                ><i class="bx bx-envelope"></i>21cs2030@rgipt.ac.in</span
+              >
+              <script>
+                function openEmail() {
+                  window.location.href = "mailto:21cs2030@rgipt.ac.in";
+                }
+              </script>
             </div>
             <form id="form" onsubmit="sendEmail(); return false;">
               <input
@@ -450,11 +505,19 @@
         <span>Also find me on</span>
       </div>
       <div class="footer-container">
-        <a href=""><i class="bx bx-envelope"></i></a>
-        <a href=""><i class="bx bxl-linkedin"></i></a>
-        <a href=""><i class="bx bxl-github"></i></a>
-        <a href=""><i class="bx bxl-instagram"></i></a>
-        <a href=""><i class="bx bxl-twitter"></i></a>
+        <a href="mailto:21cs2030@rgipt.ac.in"><i class="bx bx-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/pratyush-chandra-7741b1231"
+          ><i class="bx bxl-linkedin"></i
+        ></a>
+        <a href="https://github.com/pratyush-Chandra"
+          ><i class="bx bxl-github"></i
+        ></a>
+        <a href="https://www.instagram.com/_.pratyush8._"
+          ><i class="bx bxl-instagram"></i
+        ></a>
+        <a href="https://www.instagram.com/_.pratyush8._"
+          ><i class="bx bxl-twitter"></i
+        ></a>
       </div>
     </div>
     <div class="goto-top" id="goto-top">
