@@ -471,6 +471,85 @@ body {
   color: rgba(255, 255, 255, 1);
 }
 
+.projects-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 100px;
+}
+
+.project-card {
+  width: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  scale: 1;
+  filter: grayscale(100%) brightness(150%);
+  transition: scale 0.4s ease-in-out, filter 0.4s ease-in-out, height 0.4s;
+}
+
+.project-card:hover {
+  scale: 1.02;
+  filter: grayscale(0%) brightness(100%);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%) brightness(150%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  transition: filter 0.2s, box-shadow 0.4s;
+}
+
+.project-card-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.project-card-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+}
+
+.project-card-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  text-wrap: wrap;
+}
+
+.project-card-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-card-links a {
+  text-decoration: none;
+}
+
 .hire-content {
   width: 100%;
   display: flex;
@@ -486,20 +565,35 @@ body {
   justify-content: space-around;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 10px 20px 0px rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
   padding: 50px 0px;
 }
 
-.hire-form img {
+.hire-form-address {
   width: 100%;
-  max-width: 320px;
-  height: auto;
-  filter: grayscale(100%) brightness(150%);
-  border: 1px dashed rgba(255, 255, 255, 1);
-  box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 1);
-  transition: filter 0.2s, box-shadow 0.4s;
-  border-radius: 100px;
+  height: inherit;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hire-form-address span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
 
 .hire-form img:hover {
@@ -533,7 +627,6 @@ body {
   font-weight: 400;
   line-height: 24px;
   color: rgba(255, 255, 255, 1);
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
   transition: border 0.4s, box-shadow 0.4s;
 }
 
@@ -643,7 +736,8 @@ body {
 }
 
 .show-more button,
-.hire-form button {
+.hire-form button,
+.project-card-links a {
   width: max-content;
   padding: 15px 25px;
   border: 1px solid rgba(255, 255, 255, 1);
@@ -661,7 +755,8 @@ body {
 }
 
 .show-more button::before,
-.hire-form button::before {
+.hire-form button::before,
+.project-card-links a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -674,18 +769,21 @@ body {
 }
 
 .show-more button:hover::before,
-.hire-form button:hover::before {
+.hire-form button:hover::before,
+.project-card-links a:hover::before {
   left: 0;
 }
 
 .show-more button:hover,
-.hire-form button:hover {
+.hire-form button:hover,
+.project-card-links a:hover {
   background: transparent;
   color: rgba(0, 0, 0, 1);
 }
 
 .show-more button span,
-.hire-form button span {
+.hire-form button span,
+.project-card-links a span {
   position: relative;
   z-index: 1;
   display: flex;
@@ -697,7 +795,8 @@ body {
 }
 
 .show-more button:hover span,
-.hire-form button:hover span {
+.hire-form button:hover span,
+.project-card-links a:hover span {
   gap: 12px;
 }
 

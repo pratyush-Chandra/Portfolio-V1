@@ -27,6 +27,14 @@ window.onload = () => {
         }
     }
     skillsCardParent.style.gridTemplateRows = "repeat(2, 1fr)";
+
+    const projectsCardParent = document.getElementById("projects-content");
+    for (let i = 0; i < projectsCardParent.children.length; i++) {
+        if (i > 1) {
+            projectsCardParent.children[i].classList.add("hidden");
+        }
+    }
+    projectsCardParent.style.gridTemplateRows = "repeat(1, 1fr)";
 }
 
 const showMoreBtn = document.getElementById("show-more");
@@ -53,5 +61,34 @@ showMoreBtn.addEventListener("click", () => {
         skillsCardParent.style.gridTemplateRows = "repeat(2, 1fr)";
         showMoreBtn.innerHTML = `<span>More Skills <i class="bx bx-down-arrow-alt"></i></span>`;
         localStorage.setItem("isVisisble", true);
+        window.location.href = "#skills";
+    }
+})
+
+const showMoreProjectsBtn = document.getElementById("show-more-projects");
+localStorage.setItem("isVisisble_2", true);
+showMoreProjectsBtn.addEventListener("click", () => {
+    if (localStorage.getItem("isVisisble_2") === "true") {
+        const projectsCardParent = document.getElementById("projects-content");
+        projectsCardParent.style.gridTemplateRows = "repeat(2, 1fr)";
+        for (let i = 0; i < projectsCardParent.children.length; i++) {
+            if (i > 1) {
+                projectsCardParent.children[i].classList.remove("hidden");
+            }
+        }
+        showMoreProjectsBtn.innerHTML = `<span>View Less <i class="bx bx-up-arrow-alt"></i></span>`;
+        localStorage.setItem("isVisisble_2", false);
+    }
+    else {
+        const projectsCardParent = document.getElementById("projects-content");
+        for (let i = 0; i < projectsCardParent.children.length; i++) {
+            if (i > 1) {
+                projectsCardParent.children[i].classList.add("hidden");
+            }
+        }
+        projectsCardParent.style.gridTemplateRows = "repeat(1, 1fr)";
+        showMoreProjectsBtn.innerHTML = `<span>More Projects <i class="bx bx-down-arrow-alt"></i></span>`;
+        localStorage.setItem("isVisisble_2", true);
+        window.location.href = "#projects";
     }
 })

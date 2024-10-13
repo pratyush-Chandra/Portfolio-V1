@@ -9,6 +9,17 @@
     />
     <link rel="stylesheet" href="assets/css/index.css" />
     <title>I am... Pratyush Chandra</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "E-pY2b0GDtz2amiDP",
+        });
+      })();
+    </script>
   </head>
   <body>
     <div class="header">
@@ -109,7 +120,7 @@
         </div>
       </div>
     </div>
-    <div class="skills">
+    <div class="skills" id="skills">
       <div class="skills-container">
         <div class="skills-header">
           <span class="skills-title">01 a.&nbsp;Skills</span>
@@ -262,14 +273,103 @@
             >Some of the projects I have worked on</span
           >
         </div>
-        <div class="projects-content">
+        <div class="projects-content" id="projects-content">
           <div class="project-card">
-            <div class="project-card-img"></div>
+            <div class="project-card-img">
+              <img src="assets\images\GitHub.png" alt="" />
+            </div>
             <div class="project-card-details">
-              <div class="project-card-title"></div>
-              <div class="project-card-description"></div>
+              <div class="project-card-title">
+                AI Powered Inventory Optimization Services
+              </div>
+              <div class="project-card-description">
+                Keeping a check of Inventory in seasons or off seasons could be
+                complicated. This AI powered algorithm can not only manage
+                inventory according to the supply and demand needs but can also
+                predict future sales and demand of products based on the past
+                sales.
+              </div>
+            </div>
+            <div class="project-card-links not-visible">
+              <a href=""
+                ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
+              <a href=""
+                ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
             </div>
           </div>
+          <div class="project-card">
+            <div class="project-card-img">
+              <img src="assets\images\GitHub.png" alt="" />
+            </div>
+            <div class="project-card-details">
+              <div class="project-card-title">
+                AI Powered Combinatorial Polymer Design
+              </div>
+              <div class="project-card-description">
+                The AI powered combinatorial polymer design is one of the handy
+                tools that would allow us to find the feasibility of any polymer
+                before clinical trials
+              </div>
+            </div>
+            <div class="project-card-links not-visible">
+              <a href=""
+                ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
+              <a href=""
+                ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-card-img">
+              <img src="assets\images\GitHub.png" alt="" />
+            </div>
+            <div class="project-card-details">
+              <div class="project-card-title">Dev with AI</div>
+              <div class="project-card-description">
+                Dev with AI is a blogging platform where AI writes development
+                blogs on multiple topics. It is a self maintained, self operated
+                blogging platform. It provides a comprehensive details on how to
+                use the technology and also error handling.
+              </div>
+            </div>
+            <div class="project-card-links not-visible">
+              <a href=""
+                ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
+              <a href=""
+                ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-card-img">
+              <img src="assets\images\GitHub.png" alt="" />
+            </div>
+            <div class="project-card-details">
+              <div class="project-card-title">Portfolio-V1</div>
+              <div class="project-card-description">
+                Alpha version of @pratyush-Chandra portfolio
+                <br /><br />
+                Version: 1.0.1
+              </div>
+            </div>
+            <div class="project-card-links not-visible">
+              <a href=""
+                ><span>Demo <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
+              <a href=""
+                ><span>Source Code <i class="bx bx-right-arrow-alt"></i></span
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="show-more">
+          <button type="button" id="show-more-projects">
+            <span>More Projects <i class="bx bx-down-arrow-alt"></i></span>
+          </button>
         </div>
       </div>
     </div>
@@ -283,13 +383,28 @@
         </div>
         <div class="hire-content">
           <div class="hire-form">
-            <img src="assets\images\EmployeeSearch.gif" alt="" />
-            <form action="" method="post">
-              <input type="text" placeholder="Name" id="name" required />
+            <div class="hire-form-address">
+              <span>Let's get in touch</span>
+              <span
+                ><i class="bx bx-current-location"></i>Bangalore, India -
+                562114</span
+              >
+              <span><i class="bx bx-phone"></i>+91 8709957746</span>
+              <span><i class="bx bx-envelope"></i>21cs2030@rgipt.ac.in</span>
+            </div>
+            <form id="form" onsubmit="sendEmail(); return false;">
+              <input
+                type="text"
+                placeholder="Name"
+                id="name"
+                name="name"
+                required
+              />
               <input
                 type="email"
-                placeholder="Contact Email"
+                placeholder="Email"
                 id="email"
+                name="email"
                 required
               />
               <textarea
@@ -298,10 +413,33 @@
                 placeholder="Message"
                 required
               ></textarea>
-              <button type="submit" id="submit-btn">
+              <button type="submit" id="send-btn">
                 <span>Send <i class="bx bx-right-arrow-alt"></i></span>
               </button>
             </form>
+            <script>
+              function sendEmail() {
+                const messageParams = {
+                  name: document.getElementById("name").value,
+                  from_email: document.getElementById("email").value,
+                  message: document.getElementById("message").value,
+                };
+
+                emailjs
+                  .send("service_12ab34q", "template_hcs7shs", messageParams)
+                  .then(
+                    function (response) {
+                      document.getElementById("form").reset();
+                      alert("Your message has been sent successfully!");
+                    },
+                    function (error) {
+                      alert(
+                        "OOPS! SOMETHING WENT WRONG. PLEASE TRY AGAIN LATER."
+                      );
+                    }
+                  );
+              }
+            </script>
           </div>
         </div>
       </div>
